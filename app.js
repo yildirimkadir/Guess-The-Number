@@ -21,33 +21,39 @@ check.addEventListener("click", () => {
     text.innerHTML = "";
     if(!input.value) {
         alert("Enter a number please!")
+        input.focus();
     } else {
         if (input.value == number) {
         text.innerHTML += `<h3>Congratulations...! <br>
         Do you have time ? Play again (; </h3>`;
         text.style.color = "black";
          check.className = "disabled";
+         input.focus();
 
     } else if (input.value > 100 || input.value == 0) {
         alert("Enter a valid number please");
+        input.focus();
 
     } else if (span.textContent <= 1) {
         text.innerHTML = `<h3>Bye bye happiness..!</h3>`;
         text.style.color = "white";
         chance.innerHTML = `Don't be angry ! <br>Play again..`
         check.className = "disabled";
+        input.focus();
 
     } else if (input.value > number) {
         text.innerHTML += `<h3>Decrease your guess.</h3>`;
         text.style.color = "white";
         span.textContent -= 1; 
         high.innerHTML = `${input.value}`;
+        input.focus();
 
     } else if (input.value < number) {
         text.innerHTML += `<h3>Increase your guess.</h3>`;
         text.style.color = "black";
         span.textContent -= 1;
         low.innerHTML = `${input.value}`;
+        input.focus();
         
     } 
     }; 
